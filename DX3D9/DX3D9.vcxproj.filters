@@ -27,9 +27,21 @@
     <ClInclude Include="DX3D9.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CMainGame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CDeviceManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DX3D9.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CMainGame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CDeviceManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -3,6 +3,7 @@
 
 #include "framework.h"
 #include "DX3D9.h"
+#include "CMainGame.h"
 
 #define MAX_LOADSTRING 100
 
@@ -16,6 +17,11 @@ ATOM                MyRegisterClass(HINSTANCE hInstance);
 BOOL                InitInstance(HINSTANCE, int);
 LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
 INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
+
+// >> :
+CMainGame* g_pMainGame;
+HWND g_hWnd;
+// << :
 
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
                      _In_opt_ HINSTANCE hPrevInstance,
@@ -42,15 +48,33 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
     MSG msg;
 
+	g_pMainGame = new CMainGame;
+	g_pMainGame->Setup();
+
     // Main message loop:
-    while (GetMessage(&msg, nullptr, 0, 0))
+    while (true)
     {
-        if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
-        {
-            TranslateMessage(&msg);
-            DispatchMessage(&msg);
-        }
+		if(PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
+		{
+			if(msg.message == WM_QUIT)
+			{
+				break;
+			}
+			else
+			{
+				TranslateMessage(&msg);
+				DispatchMessage(&msg);
+			}
+			
+		}
+		else
+		{
+			g_pMainGame->Update();
+			g_pMainGame->Render();
+		}
     }
+
+	delete g_pMainGame;
 
     return (int) msg.wParam;
 }
@@ -104,7 +128,9 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    {
       return FALSE;
    }
-
+	//
+   g_hWnd = hWnd;
+   //
    ShowWindow(hWnd, nCmdShow);
    UpdateWindow(hWnd);
 
