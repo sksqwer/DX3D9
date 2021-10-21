@@ -92,14 +92,16 @@ void CMainGame::Draw_Line()
 void CMainGame::Setup_Triangle()
 {
 	ST_PC_VERTEX v;
-	v.c = D3DCOLOR_XRGB(0, 255, 255);
+	v.c = D3DCOLOR_XRGB(255, 0, 0);
 	v.p = D3DXVECTOR3(-1.0f, -1.0f, 0.0f);
 	m_vecTriangleVertex.push_back(v);
 
+	v.c = D3DCOLOR_XRGB(0, 255, 0);
 	v.p = D3DXVECTOR3(-1.0f, 1.0f, 0.0f);
 	m_vecTriangleVertex.push_back(v);
 
 
+	v.c = D3DCOLOR_XRGB(0, 0, 255);
 	v.p = D3DXVECTOR3(1.0f, 1.0f, 0.0f);
 	m_vecTriangleVertex.push_back(v);
 }
