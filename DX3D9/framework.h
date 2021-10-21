@@ -1,7 +1,3 @@
-// header.h : include file for standard system include files,
-// or project specific include files
-//
-
 #pragma once
 
 #include "targetver.h"
@@ -16,10 +12,17 @@ extern  HWND g_hWnd;
 #include <tchar.h>
 
 //DirectX
-#include <d3d9.h>
+#include <vector>
+#include <list>
+#include <string>
+#include <map>
+#include <set>
+#include <assert.h>
+
+//#include  <D3DX9math.h>
 #include <d3dx9.h>
 #pragma comment(lib, "d3d9.lib")
-#pragma comment(lib, "D:/DirectXSDK/DX9/Lib/x86/d3dx9.lib")
+#pragma comment(lib, "d3dx9.lib")
 
 extern  HWND g_hWnd;
 
@@ -35,3 +38,11 @@ static class_name* GetInstance() \
 static class_name instance; \
 return &instance ;\
 }
+
+struct ST_PC_VERTEX
+{
+	D3DXVECTOR3	p;
+	D3DCOLOR	c;
+
+	enum { FVF = D3DFVF_XYZ | D3DFVF_DIFFUSE };
+};
