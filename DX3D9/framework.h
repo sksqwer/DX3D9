@@ -27,6 +27,7 @@ extern  HWND g_hWnd;
 extern  HWND g_hWnd;
 
 #define SAFE_REALEASE(p) {if(p) p->Release(); p = NULL;}
+#define SAFE_DELETE(p) { if(p) delete p; p = NULL; }
 
 #define SINGLETON(class_name) \
 private: \
@@ -46,3 +47,6 @@ struct ST_PC_VERTEX
 
 	enum { FVF = D3DFVF_XYZ | D3DFVF_DIFFUSE };
 };
+
+//
+#include "CDeviceManager.h"
