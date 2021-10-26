@@ -6,7 +6,7 @@
 
 class CDeviceManager
 {
-	SINGLETON(CDeviceManager);
+	Singleton(CDeviceManager);
 
 private:
 	LPDIRECT3D9			m_pD3D;

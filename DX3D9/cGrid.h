@@ -1,6 +1,6 @@
 #pragma once
 
-class cPyramid;
+class cGizmo;
 
 class cGrid
 {
@@ -9,11 +9,11 @@ public:
 	~cGrid();
 
 private:
-	std::vector<ST_PC_VERTEX>	m_vecVectex;
-	std::vector<cPyramid*>		m_vecPyramid;
+	std::vector<ST_PC_VERTEX>	m_vecVertex;
+	std::vector<cGizmo*>		m_vecGizmo;
 
 public:
-	void Setup(int nNumHalfTile = 15, float fInterval = 1.0f);
+	void SetUp(int nNumHalfTile = 15, float fInterval = 1.0f);
 	void Render();
 
 };

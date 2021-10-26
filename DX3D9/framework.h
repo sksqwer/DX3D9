@@ -26,10 +26,10 @@ extern  HWND g_hWnd;
 
 extern  HWND g_hWnd;
 
-#define SAFE_REALEASE(p) {if(p) p->Release(); p = NULL;}
-#define SAFE_DELETE(p) { if(p) delete p; p = NULL; }
+#define Safe_Relaese(p) {if(p) p->Release(); p = NULL;}
+#define Safe_Delete(p) { if(p) delete p; p = NULL; }
 
-#define SINGLETON(class_name) \
+#define Singleton(class_name) \
 private: \
 class_name(void) ; \
 ~class_name(void) ; \
@@ -50,3 +50,31 @@ struct ST_PC_VERTEX
 
 //
 #include "CDeviceManager.h"
+
+struct ST_PNT_VERTEX
+{
+	D3DXVECTOR3	p;
+	D3DXVECTOR3	n;
+	D3DXVECTOR2	t;
+
+	enum { FVF = D3DFVF_XYZ | D3DFVF_NORMAL | D3DFVF_TEX1 };
+};
+
+// ## 문자열 합치기
+#define Synthesize(varType, varName, funName)\
+	protected:\
+		varType varName;\
+	public:\
+		inline varType Get##funName(void) const {return varName;}\
+	public:\
+		inline void Set##funName(varType var) {varName = var;}
+
+#define Synthesize_Pass_By_Ref(varType, varName, funName)\
+	protected:\
+		varType varName;\
+	public:\
+		inline varType& Get##funName(void) {return varName;}\
+	public:\
+		inline void Set##funName(varType& var) {varName = var;}
+
+

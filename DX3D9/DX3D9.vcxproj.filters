@@ -39,10 +39,16 @@
     <ClInclude Include="cCamera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="cPyramid.h">
+    <ClInclude Include="cGrid.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="cGrid.h">
+    <ClInclude Include="cGizmo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cCubePNT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cCubeNode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -62,10 +68,16 @@
     <ClCompile Include="cCamera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="cPyramid.cpp">
+    <ClCompile Include="cGrid.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="cGrid.cpp">
+    <ClCompile Include="cGizmo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cCubePNT.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cCubeNode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

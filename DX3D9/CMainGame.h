@@ -3,6 +3,7 @@
 
 class cCubePC;
 class cCamera;
+class cGrid;
 
 class CMainGame
 {
@@ -13,6 +14,10 @@ public:
 private:
 	cCubePC*			m_pCubePC;
 	cCamera*			m_pCamera;
+	cGrid*				m_pGrid;
+
+
+
 	//LPDIRECT3D9			m_pD3D;
 	//LPDIRECT3DDEVICE9	m_pD3DDevice;
 	//std::vector<ST_PC_VERTEX> m_vecLineVertex;
