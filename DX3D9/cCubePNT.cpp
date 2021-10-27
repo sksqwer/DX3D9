@@ -77,7 +77,7 @@ void cCubePNT::SetUp()
 
 	vecIndex.push_back(4);
 	vecIndex.push_back(3);
-	vecIndex.push_back(2);
+	vecIndex.push_back(7);
 
 	m_vecVertex.resize(36);
 

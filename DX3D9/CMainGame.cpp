@@ -4,6 +4,7 @@
 #include "cCubePC.h"
 #include  "cCamera.h"
 #include  "cGrid.h"
+#include "cCubeMan.h"
 
 CMainGame::CMainGame()
 	: m_pCubePC(NULL)
@@ -23,11 +24,15 @@ CMainGame::~CMainGame()
 
 void CMainGame::Setup()
 {
-	m_pCubePC = new cCubePC;
-	m_pCubePC->SetUp();
+	//m_pCubePC = new cCubePC;
+	//m_pCubePC->SetUp();
+
+	m_pcCubeMan = new cCubeMan;
+	m_pcCubeMan->Setup();
 
 	m_pCamera = new cCamera;
-	m_pCamera->SetUp(&m_pCubePC->GetPosition());
+	m_pCamera->SetUp(&m_pcCubeMan->GetPosition());
+
 
 	m_pGrid = new cGrid;
 	m_pGrid->SetUp();
@@ -39,6 +44,9 @@ void CMainGame::Update()
 {
 	if (m_pCubePC)
 		m_pCubePC->Update();
+
+	if (m_pcCubeMan)
+		m_pcCubeMan->Update();
 
 	if (m_pCamera)
 		m_pCamera->Update();
@@ -57,6 +65,9 @@ void CMainGame::Render()
 	//Draw_Triangle();
 	if (m_pCubePC)
 		m_pCubePC->Render();
+
+	if (m_pcCubeMan)
+		m_pcCubeMan->Render();
 
 	if(m_pGrid)
 		m_pGrid->Render();

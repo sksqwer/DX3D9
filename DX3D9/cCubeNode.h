@@ -10,8 +10,8 @@ public:
 protected:
 	D3DXVECTOR3		m_vLocalPos;
 
-	D3DXMATRIX		m_matLocallTM;
-	D3DXMATRIX		m_matWorlddTM;
+	D3DXMATRIXA16		m_matLocallTM;
+	D3DXMATRIXA16		m_matWorlddTM;
 	std::vector<cCubeNode*> m_vecChild;
 	Synthesize(D3DXMATRIXA16*, m_pParentWorldTM, ParentWorldTM);
 	Synthesize(float, m_fRotDeltaX, RotDeltaX);

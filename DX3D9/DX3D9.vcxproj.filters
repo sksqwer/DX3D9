@@ -13,6 +13,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="CubeMan">
+      <UniqueIdentifier>{def033fc-3855-4e7c-b02f-3ffdc6ebd68e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CubeMan\Header Files">
+      <UniqueIdentifier>{ff3eda38-b86c-453f-8687-841b1ce60560}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CubeMan\Source Files">
+      <UniqueIdentifier>{bc422c8f-0941-49fd-9d2c-40fbf0981023}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -48,8 +57,32 @@
     <ClInclude Include="cCubePNT.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="cRightArm.h">
+      <Filter>CubeMan\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cBody.h">
+      <Filter>CubeMan\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cCharacter.h">
+      <Filter>CubeMan\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cCubeMan.h">
+      <Filter>CubeMan\Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="cCubeNode.h">
-      <Filter>Header Files</Filter>
+      <Filter>CubeMan\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cHead.h">
+      <Filter>CubeMan\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cLeftArm.h">
+      <Filter>CubeMan\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cLeftLeg.h">
+      <Filter>CubeMan\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cRightLeg.h">
+      <Filter>CubeMan\Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -77,8 +110,32 @@
     <ClCompile Include="cCubePNT.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="cBody.cpp">
+      <Filter>CubeMan\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cCharacter.cpp">
+      <Filter>CubeMan\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cCubeMan.cpp">
+      <Filter>CubeMan\Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="cCubeNode.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>CubeMan\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cHead.cpp">
+      <Filter>CubeMan\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cLeftArm.cpp">
+      <Filter>CubeMan\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cLeftLeg.cpp">
+      <Filter>CubeMan\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cRightArm.cpp">
+      <Filter>CubeMan\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cRightLeg.cpp">
+      <Filter>CubeMan\Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
