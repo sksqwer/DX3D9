@@ -27,31 +27,47 @@ void cCubeMan::Setup()
 
 	// : 몸의 각 부위 조합
 
-	//m_pRoot = new cCubeNode;	//m_pRoot->SetUp();	//m_pRoot->SetParentWorldTM(&m_matWorld);
+	//m_pRoot = new cCubeNode;
+	//m_pRoot->SetUp();
+	//m_pRoot->SetParentWorldTM(&m_matWorld);
+
+	ZeroMemory(&m_stMtl, sizeof(D3DMATERIAL9));
+
+	m_stMtl.Ambient = D3DXCOLOR(0.7f, 0.7f, 0.7f, 1.0f);
+	m_stMtl.Diffuse = D3DXCOLOR(0.7f, 0.7f, 0.7f, 1.0f);
+	m_stMtl.Specular = D3DXCOLOR(0.7f, 0.7f, 0.7f, 1.0f);
 
 
 
-	cBody* pBody = new cBody;	pBody->SetUp();	pBody->SetParentWorldTM(&m_matWorld);	m_pRoot = pBody;
+	cBody* pBody = new cBody;
+	pBody->SetUp();
+	pBody->SetParentWorldTM(&m_matWorld);
+	m_pRoot = pBody;
 
 
 	cHead* p_head = new cHead;
 	p_head->SetUp();
+	p_head->SetRotDeltaX(-0.1f);
 	m_pRoot->AddChild(p_head);
 
 	cLeftArm* p_left_arm = new cLeftArm;
 	p_left_arm->SetUp();
+	p_left_arm->SetRotDeltaX(0.1f);
 	m_pRoot->AddChild(p_left_arm);
 
 	cRightArm* p_right_arm = new cRightArm;
 	p_right_arm->SetUp();
+	p_right_arm->SetRotDeltaX(-0.1f);
 	m_pRoot->AddChild(p_right_arm);
 
 	cLeftLeg* p_left_leg = new cLeftLeg;
 	p_left_leg->SetUp();
+	p_left_leg->SetRotDeltaX(-0.1f);
 	m_pRoot->AddChild(p_left_leg);
 
 	cRightLeg* p_right_leg = new cRightLeg;
 	p_right_leg->SetUp();
+	p_right_leg->SetRotDeltaX(0.1f);
 	m_pRoot->AddChild(p_right_leg);
 
 
@@ -69,7 +85,8 @@ void cCubeMan::Render()
 {
 	if(g_pD3DDevice)
 	{
-		//g_pD3DDevice->SetRenderState(D3DRS_LIGHTING, true);
+		g_pD3DDevice->SetMaterial(&m_stMtl);
+		g_pD3DDevice->SetRenderState(D3DRS_LIGHTING, true);
 
 		cCharacter::Render();
 		D3DXMATRIXA16 matWorld;

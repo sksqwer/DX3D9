@@ -1,4 +1,3 @@
-
 #include "framework.h"
 #include "cGizmo.h"
 
@@ -11,8 +10,15 @@ cGizmo::~cGizmo()
 {
 }
 
-void cGizmo::Setup(D3DCOLOR c, D3DXMATRIXA16& mat)
+void cGizmo::Setup(D3DXCOLOR c, D3DXMATRIXA16& mat)
 {
+	ZeroMemory(&m_stMt1, sizeof(D3DMATERIAL9));
+	m_stMt1.Ambient = c;
+	m_stMt1.Diffuse = c;
+	m_stMt1.Specular = c;
+
+
+
 	m_matR = mat;
 	ST_PC_VERTEX v;
 	v.c = c;

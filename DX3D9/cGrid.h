@@ -12,6 +12,7 @@ private:
 	std::vector<ST_PC_VERTEX>	m_vecVertex;
 	std::vector<cGizmo*>		m_vecGizmo;
 
+
 public:
 	void SetUp(int nNumHalfTile = 15, float fInterval = 1.0f);
 	void Render();

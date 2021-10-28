@@ -13,11 +13,13 @@ public:
 	~CMainGame();
 
 private:
-	cCubePC*			m_pCubePC;
-	cCamera*			m_pCamera;
-	cGrid*				m_pGrid;
-	cCubeMan*			m_pcCubeMan;
+	cCubePC*					m_pCubePC;
+	cCamera*					m_pCamera;
+	cGrid*						m_pGrid;
+	cCubeMan*					m_pcCubeMan;
 
+	LPDIRECT3DTEXTURE9			m_pTexture;
+	std::vector<ST_PT_VERTEX>	m_vecVertex;
 
 
 	//LPDIRECT3D9			m_pD3D;
@@ -37,5 +39,10 @@ public:
 	void Draw_Triangle();*/
 
 	void WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
+
+
+	void Set_Light();
+	void Set_Texture();
+	void Draw_Texture();
 };
 
