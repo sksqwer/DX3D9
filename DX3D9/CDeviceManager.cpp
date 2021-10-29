@@ -48,6 +48,6 @@ LPDIRECT3DDEVICE9 CDeviceManager::GetDevice()
 
 void CDeviceManager::Destroy()
 {
-	Safe_Relaese(m_pD3DDevice);
-	Safe_Relaese(m_pD3D);
+	Safe_Release(m_pD3DDevice);
+	Safe_Release(m_pD3D);
 }

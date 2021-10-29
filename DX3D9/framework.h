@@ -26,7 +26,7 @@ extern  HWND g_hWnd;
 
 extern  HWND g_hWnd;
 
-#define Safe_Relaese(p) {if(p) p->Release(); p = NULL;}
+#define Safe_Release(p) {if(p) p->Release(); p = NULL;}
 #define Safe_Delete(p) { if(p) delete p; p = NULL; }
 
 #define Singleton(class_name) \

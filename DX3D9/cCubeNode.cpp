@@ -33,6 +33,7 @@ void cCubeNode::Destroy()
 void cCubeNode::SetUp()
 {
 	cCubePNT::SetUp();
+
 }
 
 void cCubeNode::Update()

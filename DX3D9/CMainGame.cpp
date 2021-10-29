@@ -22,7 +22,7 @@ CMainGame::~CMainGame()
 	Safe_Delete(m_pCamera);
 	Safe_Delete(m_pGrid);
 	Safe_Delete(m_pcCubeMan);
-	Safe_Relaese(m_pTexture);
+	Safe_Release(m_pTexture);
 	g_pDeviceManager->Destroy();
 }
 
@@ -74,10 +74,10 @@ void CMainGame::Render()
 	//if (m_pCubePC)
 	//	m_pCubePC->Render();
 
-	//if (m_pcCubeMan)
-		//m_pcCubeMan->Render();
+	if (m_pcCubeMan)
+		m_pcCubeMan->Render();
 
-	Draw_Texture();
+	//Draw_Texture();
 
 	if(m_pGrid)
 		m_pGrid->Render();
