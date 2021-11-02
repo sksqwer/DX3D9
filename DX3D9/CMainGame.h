@@ -5,6 +5,7 @@ class cCubePC;
 class cCamera;
 class cGrid;
 class cCubeMan;
+class cGroup;
 
 class CMainGame
 {
@@ -20,7 +21,7 @@ private:
 
 	LPDIRECT3DTEXTURE9			m_pTexture;
 	std::vector<ST_PT_VERTEX>	m_vecVertex;
-
+	std::vector<cGroup*>		m_vecGroup;
 
 	//LPDIRECT3D9			m_pD3D;
 	//LPDIRECT3DDEVICE9	m_pD3DDevice;
@@ -44,5 +45,8 @@ public:
 	void Set_Light();
 	void Set_Texture();
 	void Draw_Texture();
+
+	void Setup_Obj();
+	void Draw_Obj();
 };
 
