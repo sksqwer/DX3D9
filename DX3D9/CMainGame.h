@@ -22,12 +22,13 @@ private:
 	LPDIRECT3DTEXTURE9			m_pTexture;
 	std::vector<ST_PT_VERTEX>	m_vecVertex;
 	std::vector<cGroup*>		m_vecGroup;
+	std::vector<cGroup*>		m_vecMap;
 
 	//LPDIRECT3D9			m_pD3D;
 	//LPDIRECT3DDEVICE9	m_pD3DDevice;
 	//std::vector<ST_PC_VERTEX> m_vecLineVertex;
 	//std::vector<ST_PC_VERTEX> m_vecTriangleVertex;
-
+	iMap*						m_pMap;
 public:
 	void Setup();
 	void Update();
@@ -48,5 +49,10 @@ public:
 
 	void Setup_Obj();
 	void Draw_Obj();
+
+	void Setup_Map();
+	void Draw_Map();
+	void Setup_Surface();
+	
 };
 

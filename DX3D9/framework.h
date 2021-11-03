@@ -102,3 +102,4 @@ protected : varType varName;\
 #include "cObject.h"
 #include "cObjectManager.h"
 #include "cTextureManager.h"
+#include "iMap.h"

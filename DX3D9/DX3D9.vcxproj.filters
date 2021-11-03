@@ -31,6 +31,15 @@
     <Filter Include="Obj\Header Files">
       <UniqueIdentifier>{0a4512df-2af5-48f1-8a01-6e2927248f09}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Map">
+      <UniqueIdentifier>{b8c16043-500b-4573-9938-e4bf8eb0a236}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Map\Header Files">
+      <UniqueIdentifier>{fa8e734b-9484-4f44-a236-6071327fcc27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Map\Source Files">
+      <UniqueIdentifier>{ae5123e9-91c1-49f5-83d9-ee3a2164edac}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -111,6 +120,12 @@
     <ClInclude Include="cTextureManager.h">
       <Filter>Obj\Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="iMap.h">
+      <Filter>Map\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cObjMap.h">
+      <Filter>Map\Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DX3D9.cpp">
@@ -181,6 +196,12 @@
     </ClCompile>
     <ClCompile Include="cTextureManager.cpp">
       <Filter>Obj\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="iMap.cpp">
+      <Filter>Map\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cObjMap.cpp">
+      <Filter>Map\Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

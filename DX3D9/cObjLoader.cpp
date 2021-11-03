@@ -100,6 +100,13 @@ void cObjLoader::Load(std::vector<cGroup*>& vecGroup, char * szFolder, char * sz
 	}
 
 	fclose(fp);
+
+	for (auto it : m_mapMtlTex)
+	{
+		Safe_Release(it.second);
+	}
+	m_mapMtlTex.clear();
+
 }
 
 void cObjLoader::LoadMtlLib(char * szFolder, char * szFile)
@@ -183,4 +190,78 @@ void cObjLoader::LoadMtlLib(char * szFolder, char * szFile)
 			
 	}
 	fclose(fp);
+}
+
+void cObjLoader::LoadSurface(std::vector<D3DXVECTOR3>& vecSurface, char* szFolder, char* szFile, D3DXMATRIXA16* pmat)
+{
+	vector<D3DXVECTOR3> vecV;
+	vector<D3DXVECTOR2> vecVT;
+	vector<D3DXVECTOR3> vecVN;
+	vector<ST_PNT_VERTEX> vecVertex;
+
+	string sFullPath(szFolder);
+	sFullPath += (string("/") + string(szFile));
+
+	FILE* fp;
+	fopen_s(&fp, sFullPath.c_str(), "r");
+
+	string sMtlName;
+
+	while (true)
+	{
+		if (feof(fp)) break;
+
+		char szTemp[1024];
+		fgets(szTemp, 1024, fp);
+		if (szTemp[0] == '#')
+			continue;
+		else if (szTemp[0] == 'm')
+		{
+		}
+		else if (szTemp[0] == 'g')
+		{
+		}
+		else if (szTemp[0] == 'v')
+		{
+			if (szTemp[1] == ' ')
+			{
+				float x, y, z;
+				sscanf_s(szTemp, "%*s %f %f %f", &x, &y, &z);
+				vecV.push_back(D3DXVECTOR3(x, y, z));
+			}
+			else if (szTemp[1] == 't')
+			{
+			}
+			else if (szTemp[1] == 'n')
+			{
+			}
+		}
+		else if (szTemp[0] == 'u')
+		{
+		}
+		else if (szTemp[0] == 'f')
+		{
+			int nIndex[3];
+			sscanf_s(szTemp, "%*s %d/%*d/%*d %d/%*d/%*d %d/%*d/%*d",
+				&nIndex[0], &nIndex[1], &nIndex[2]);
+
+			for (int i = 0; i < 3; i++)
+			{
+				vecSurface.push_back(vecV[nIndex[i] - 1]);
+			}
+		}
+	}
+
+	fclose(fp);
+
+	if(pmat)
+	{
+		for(size_t i = 0; i <vecSurface.size(); i++)
+		{
+			D3DXVec3TransformCoord(
+				&vecSurface[i],
+				&vecSurface[i],
+				pmat);
+		}
+	}
 }
