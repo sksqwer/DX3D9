@@ -33,8 +33,13 @@ CMainGame::~CMainGame()
 	{
 		Safe_Release(p);
 	}
+	for (auto p : m_vecMap)
+	{
+		Safe_Release(p);
+	}
 	m_vecGroup.clear();
-
+	m_vecMap.clear();
+	
 	g_pDeviceManager->Destroy();
 }
 
